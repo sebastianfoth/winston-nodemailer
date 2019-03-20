@@ -1,0 +1,75 @@
+{
+  "name": "@sebastianfoth/winston-nodemailer",
+  "version": "0.0.1",
+  "description": "A nodemailer transport for winston 3.x",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Sebastian Foth <ich@sebastianfoth,de>",
+  "license": "",
+  "scripts": {
+    "build": "rimraf dist && tsc -p tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "precommit": "lint-staged",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "keywords": [
+    "winston",
+    "nodemailer",
+    "mail",
+    "typescript"
+  ],
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "nodemailer": "^4.1.0",
+    "winston": "^3.0.0",
+    "mustache": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "@types/mongoose": "^5.3.23",
+    "@types/node": "^10.12.18",
+    "@types/supertest": "^2.0.7",
+    "@types/smtp-server": "^1.15.3",
+    "@types/winston": "^2.4.4",
+    "jest": "^24.5.0",
+    "prettier": "^1.15.3",
+    "supertest": "^3.4.1",
+    "ts-jest": "^24.0.0",
+    "ts-node": "^7.0.1",
+    "tsconfig-paths": "^3.7.0",
+    "tslint": "5.12.1",
+    "typescript": "^3.2.4",
+    "rimraf": "^3.2.4"
+  },
+  "engines": {
+    "node": ">= 11.12.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
