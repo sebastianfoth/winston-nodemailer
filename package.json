@@ -25,8 +25,6 @@
     "mail",
     "typescript"
   ],
-  "dependencies": {
-  },
   "peerDependencies": {
     "nodemailer": "^4.1.0",
     "winston": "^3.0.0",
@@ -38,7 +36,6 @@
     "@types/node": "^10.12.18",
     "@types/supertest": "^2.0.7",
     "@types/smtp-server": "^1.15.3",
-    "@types/winston": "^2.4.4",
     "jest": "^24.5.0",
     "prettier": "^1.15.3",
     "supertest": "^3.4.1",
@@ -47,7 +44,7 @@
     "tsconfig-paths": "^3.7.0",
     "tslint": "5.12.1",
     "typescript": "^3.2.4",
-    "rimraf": "^3.2.4"
+    "rimraf": "^2.6.3"
   },
   "engines": {
     "node": ">= 11.12.0"
