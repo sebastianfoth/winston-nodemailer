@@ -156,7 +156,7 @@ export class WinstonNodemailer extends Transport {
    * Returns the default email subject
    */
   private returnDefaultSubject(): string {
-    return `{{application}} | {{environment}} | {{level}} | Winston Report`;
+    return `{{application}} | {{environment}} | {{level}} | {{hostname}} | Winston Report`;
   }
 
   /**
