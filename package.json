@@ -1,6 +1,6 @@
 {
   "name": "@sebastianfoth/winston-nodemailer",
-  "version": "0.0.1",
+  "version": "0.0.22",
   "description": "A nodemailer transport for winston 3.x",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -70,6 +70,8 @@
     "testEnvironment": "node"
   },
   "dependencies": {
+    "@types/nodemailer": "^4.6.6",
+    "@types/nodemailer-smtp-transport": "^2.7.4",
     "mustache": "^3.0.1",
     "nodemailer": "^5.1.1",
     "nodemailer-smtp-transport": "^2.7.4",

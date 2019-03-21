@@ -1,0 +1,43 @@
+{{#errors}}
+<h1 style="background: #c09853;color: #ffffff;padding: 5px;">
+    {{level}}
+</h1>
+<table cellspacing="1" width="100%">
+    <tr style="padding:4px; text-align:left">
+        <th style="vertical-align: top;background: #ccc;color: #000" width="100">
+            Message
+        </th>
+        <td style="padding: 4px;text-align: left;vertical-align: top;background: #eee;color: #000">
+            <pre>{{message}}</pre>
+        </td>
+    </tr>
+
+    <tr style="padding:4px; text-align:left">
+        <th style="vertical-align: top;background: #ccc;color: #000" width="100">
+            Time
+        </th>
+        <td style="padding: 4px;text-align: left;vertical-align: top;background: #eee;color: #000">
+            <pre>{{timestamp}}</pre>
+        </td>
+    </tr>
+
+    <tr style="padding:4px; text-align:left">
+        <th style="vertical-align: top;background: #ccc;color: #000" width="100">
+            Meta
+        </th>
+        <td style="padding: 4px;text-align: left;vertical-align: top;background: #eee;color: #000">
+            <pre>{{meta}}</pre>
+        </td>
+    </tr>
+
+    <tr style="padding:4px; text-align:left">
+        <th style="vertical-align: top;background: #ccc;color: #000" width="100">
+            Stack
+        </th>
+        <td style="padding: 4px;text-align: left;vertical-align: top;background: #eee;color: #000">
+            <pre>{{stack}}</pre>
+        </td>
+    </tr>
+
+</table>
+{{/errors}}
