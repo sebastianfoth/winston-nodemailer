@@ -66,8 +66,8 @@ export class WinstonNodemailer extends Transport {
 
     /* @TODO Refactor & Cleanup */
     if (!this.triggered) {
-      this.triggered = setTimeout(() => {
-        this.sendMail(
+      this.triggered = setTimeout(async () => {
+        await this.sendMail(
           {
             errorDetails: {
               timestamp: this.timestamp(),
@@ -88,7 +88,6 @@ export class WinstonNodemailer extends Transport {
             application: this.application,
             environment: process.env.NODE_ENV || 'default',
           },
-          callback,
         );
       }, this.waitUntilSend);
     }
@@ -99,18 +98,22 @@ export class WinstonNodemailer extends Transport {
    *
    * @param subjectTemplateData
    * @param bodyTemplateData
-   * @param callback
    */
-  private sendMail(subjectTemplateData: ISubjectTemplateData, bodyTemplateData: IBodyTemplateData, callback: LogCallback) {
-    this.transporter
-      .sendMail({
+  private async sendMail(subjectTemplateData: ISubjectTemplateData,
+                         bodyTemplateData: IBodyTemplateData) {
+    try {
+      await this.transporter.sendMail({
         ...this.options.sendMailOptions,
         ...this.options.smtpOptions,
         subject: this.returnRenderedSubject(this.subject, subjectTemplateData),
         html: this.returnRenderedBody(this.template, bodyTemplateData),
-      }, callback);
+      });
 
-    this.errorDetailsBuffer = [];
+      this.errorDetailsBuffer = [];
+    } catch (error) {
+      console.log(error);
+    }
+
     delete this.triggered;
   }
 
